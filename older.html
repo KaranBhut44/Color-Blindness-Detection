@@ -60,35 +60,27 @@
     </head>
     <body>
         <a-scene cursor="rayOrigin: mouse">
-                <a-entity id="cam" camera="active: true" position="0 0 0" rotation="0 0 0"  look-controls wasd-controls="acceleration:100 enabled:true" mouse-cursor>
+            <a-entity id="cam" camera="active: true" position="0 0 0" rotation="0 0 0"  look-controls wasd-controls="acceleration:100 enabled:true" mouse-cursor>
                <mouse-cursor></mouse-cursor>
             </a-entity>
-            <!-- </a-camera> -->
             <rw-room position="-2 -2 -2" height="3">
-                
-            <rw-wall position="4 0 0" material="color:pink">
-            </rw-wall>
-            <rw-wall position="4 0 4" material="color:green">
-                <rw-doorhole id="frontOuter" doorhole="" position="3 0 0"></rw-doorhole>
-                
-            </rw-wall>
-            <rw-wall position="0 0 4" material="color:pink"></rw-wall>
-            <rw-wall position="0 0 0" material="color:white">
-                
-                <a-box id="boxId" onclick="prev()"
-                position="1.8 0.6 0.05" color="red" height="0.1" width="0.2" depth="0.03">
-                <a-text position="-0.1 0.03 0.02" width="2" value="prev" color="black"></a-text>
-                </a-box>
-                <a-box id="boxId1" onclick="next()"
-                position="2.2 0.6 0.05" color="green" height="0.1" width="0.2" depth="0.03">
-                <a-text position="-0.1 0.03 0.02" width="2" value="next" color="black"></a-text>
-                </a-box>
-                <a-image id ="imageTag" src="plates_images/1.jpg" height="1" width="1" position="2 1.65 0.1" scale="1.7 1.7 1.7"></a-image>
-            </rw-wall>
-            <rw-floor material="color:grey"></rw-floor>
-            <rw-ceiling material="color:black"></rw-ceiling>
+                <rw-wall position="4 0 0" material="color:pink"></rw-wall>
+                <rw-wall position="4 0 4" material="color:green"></rw-wall>
+                <rw-wall position="0 0 4" material="color:pink"></rw-wall>
+                <rw-wall position="0 0 0" material="color:white">
+                    <a-box id="boxId" onclick="prev()"
+                    position="1.8 0.6 0.05" color="red" height="0.1" width="0.2" depth="0.03">
+                        <a-text position="-0.1 0.03 0.02" width="2" value="prev" color="black"></a-text>
+                    </a-box>
+                    <a-box id="boxId1" onclick="next()"
+                    position="2.2 0.6 0.05" color="green" height="0.1" width="0.2" depth="0.03">
+                        <a-text position="-0.1 0.03 0.02" width="2" value="next" color="black"></a-text>
+                    </a-box>
+                    <a-image id ="imageTag" src="plates_images/1.jpg" height="1" width="1" position="2 1.65 0.1" scale="1.7 1.7 1.7"></a-image>
+                </rw-wall>
+                <rw-floor material="color:grey"></rw-floor>
+                <rw-ceiling material="color:black"></rw-ceiling>
             </rw-room>
-            <a-sky src="b.jpg" color="#ECECEC"></a-sky>
         </a-scene>
     </body>
 </html>
