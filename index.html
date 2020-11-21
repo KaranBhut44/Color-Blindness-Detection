@@ -1,126 +1,78 @@
-<!DOCTYPE html>
+  
 <html>
-
-<head>
-    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
-    <script src="script.js"></script>
-    <script>
-    </script>
-</head>
-
-<body>
+<head> 
+    <link rel="stylesheet" href="./style.css"> 
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+<title>JavaScript Form Validation </title>  
 
 
-    <a-scene>
-        <a-assets>
-            <a-asset-item id="clinic" src="rmtext/clinicf.gltf"> </a-asset-item>
-        </a-assets>
-        <a-camera position="0 1 0">
-            <a-entity cursor="fuse:true" position="0 0 -1" geometry="primitive:sphere;radius:0.010"
-                material="color:black;shader:flat;">
-            </a-entity>
-        </a-camera>
-        <a-entity gltf-model="#clinic" position="3.5 0 2.5" rotation="0 180 0">
-            <a-image src="plates_images/1.jpg" id="imageTag" position="4 1.3 6.25" scale="1.25 1.25 1.25"
-                rotation="0 180 0">
-                <!-- x = z, y = y, z=x -->
-                <a-plane id="o1" color="green" scale="0.25 0.20" position="0.2 -0.62 0.04">
-                    <!-- x=-z y = y, z=-x -->
-                    <a-text class="oval" value="12" color="black" align="center" height="10" width="10"></a-text>
-                </a-plane>
-                <a-plane id="o2" color="orange" scale="0.25 0.20" position="-0.1 -0.62 0.04">
-                    <a-text class="oval" value="12" color="black" align="center" height="10" width="10"></a-text>
-                </a-plane>
-                <a-plane id="o3" color="blue" scale="0.25 0.20" position="0.5 -0.62 0.04">
-                    <a-text class="oval" value="12" color="black" align="center" height="10" width="10"></a-text>
-                </a-plane>
-                <a-plane id="o4" color="red" scale="0.25 0.20" position="-0.4 -0.62 0.04">
-                    <a-text class="oval" value="12" color="black" align="center" height="10" width="10"></a-text>
-                </a-plane>
+</head>  
+<body>  
+<div id="element">
+    <h1 align="center" id="user-details">User Details</h1>
 
-                <a-box id="boxId1" position="0.2 -0.83 -0.02" color="red" height="0.1" width="0.2" depth="0.01"
-                       event-set__enter="_event: mouseenter; material.color: white"
-                       event-set__leave="_event: mouseleave; material.color: red">
-                       </a-box>
-                       <a-box id="boxId"             
-                       position="-0.12 -0.83 -0.02" color="green" height="0.1" width="0.2" depth="0.01"
-                       event-set__enter="_event: mouseenter; material.color: white"
-                       event-set__leave="_event: mouseleave; material.color: green"> 
-                </a-box>
-                
-            </a-image>
+    <form name='reg' onSubmit="return formValidation();" action="" method="post">  
 
-        </a-entity>
-    </a-scene>
-    <script>
-        var flag = 1;
-        var flag2 = 1;
-        function next() {
-            if (flag == 1) {
-                var x = document.querySelector('#imageTag').getAttribute('src');
-                var y = 0;
-                var z = "";
-                if (x.charAt(15) == '.') {
-                    y = parseInt(x.charAt(14));
-                    y++;
-                    z = x.slice(0, 14) + y.toString() + x.slice(15, x.length + 1);
-                }
-                else {
-                    y = parseInt(x.slice(14, 16));
-                    if (y != 38) {
-                        y++;
-                        z = x.slice(0, 14) + y.toString() + x.slice(16, x.length + 1);
-                    }
-                    else
-                        z = x;
-                }
-                document.querySelector('#imageTag').setAttribute('src', z);
-            }
-            flag = 0;
-        }
-        function prev() {
-            if (flag2 == 1) {
-                var x = document.querySelector('#imageTag').getAttribute('src');
-                var y = 0;
-                var z = "";
-                if (x.charAt(15) == '.') {
-                    y = parseInt(x.charAt(14));
-                    if (y != 1) {
-                        y--;
-                        z = x.slice(0, 14) + y.toString() + x.slice(15, x.length + 1);
-                    }
-                    else {
-                        z = x;
-                    }
-                }
-                else {
-                    y = parseInt(x.slice(14, 16));
-                    y--;
-                    z = x.slice(0, 14) + y.toString() + x.slice(16, x.length + 1);
-                }
-                document.querySelector('#imageTag').setAttribute('src', z);
-            }
+    <table align="center" border="0" cellpadding="3px" cellspacing="10px" width="450px" class="table">
+
+    <!-- <tr> 
+    <td>Customer Name: </td> 
+    <td><input type="text" name="uid" size="30" /> </td>
+    </tr>  -->
+    
+    <tr> 
+    <td>Email:</td>
+    <td><input type="text" name="email" size="30" />  </td>
+    </tr>
+
+    <!-- <tr> 
+    <td>Mobile No:</td>
+    <td><input type="text" name="mob" size="30" /> </td> 
+    </tr> -->
+
+    <tr> 
+        <td>Age:</td>
+        <td><input type="text" name="age" size="30" /> </td> 
+    </tr>
 
 
-        }
 
-        document.querySelector('#boxId1').addEventListener('mouseenter', function () {
-            setTimeout(next, 2000);
-        });
+    <tr> 
+    <td>Gender:</td>
+    <td><input type="radio" name="gen" value="Male" />Male  
+    <input type="radio" name="gen" value="Female" />Female  </td>
+    </tr>
+    </table>
 
-        document.querySelector('#boxId1').addEventListener('mouseleave', function () {
-            flag = 1;
-        });
-        document.querySelector('#boxId').addEventListener('mouseenter', function () {
-            setTimeout(prev, 2000);
-        });
 
-        document.querySelector('#boxId').addEventListener('mouseleave', function () {
-            flag2 = 1;
-        });
-    </script>
-</body>
+    </form>  
 
-</html>
+    <h1 align="center" id="instruction-heading">Instructions</h1>
+
+    <ol class="instruction">
+        <li>
+            Fill details above and click on start game.
+        </li>
+        <li>
+            Given screen in front an image will be displayed (<) and (>) to the left and right of image to change the image. After choosing the desired option use these buttons to move forward and backward.
+        </li>
+        <li>
+            Below are options to choose, the options contain some numbers out of which one option matches the number which is present in the image. Choose None if your desired option is not in the list.
+        </li>
+        <li>
+            There is a cursor 'o' which will help to choose option to select , In VR you have to gaze at different direction while on desktop mouse will be used to move the cursor On gazing for 1.5 seconds the selection option will turn to black.
+        </li>
+        <li>
+            At the end of the test you will get the report of your test result.
+            <br>
+            Cheers
+            <br>
+	        SSD 4
+        </li>
+    </ol>
+    <center><input type="submit" name="submit" value="Start Test" id="submit-button" onclick="fill_details()"/></center>
+</div>
+
+    <script src="./form.js"></script>
+</body>  
+</html>  

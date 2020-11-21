@@ -1,0 +1,60 @@
+<html>
+    <head> 
+        <link rel="stylesheet" href="./report_style.css"> 
+        <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+        <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+        <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+        <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <title>Test Report</title>  
+
+    </head>  
+    <body>  
+    <div id="element">
+        <h1 align="center" id="title">Test Result</h1> 
+    
+        <table align="center" border="0" cellpadding="3px" cellspacing="10px" width="450px" class="table">
+
+            
+            <tr> 
+            <td>Email:</td>
+            <td><span id="email"></span></td>
+            </tr>
+        
+        
+            <tr> 
+                <td>Age:</td>
+                <td><span id="age"></span></td>
+            </tr>
+        
+        
+        
+            <tr> 
+            <td>Gender:</td>
+            <td><span id="gender"></span></td>
+            </tr>
+            
+            <tr> 
+            <td>Transformation design error: </td>
+            <td><span id="transformation"></span></td>
+            </tr>
+            <tr> 
+            <td>Vanishing design error: </td>
+            <td><span id="vanishing"></span></td>
+            </tr>
+            <tr>
+            <td>Hidden design error: </td>
+            <td><span id="hidden"></span></td>
+            </tr>
+            <span id="recommend"></span>
+            </table>       
+            <center><span id="result">Color blindness:  </span></center>
+    
+        <!-- <h1 align="center">Instructions</h1>  <br /> -->
+        <center><h4 onclick="printPage()" id="print"> Print </h4></center>
+    </div>
+    <script src="report.js"></script>
+    </body>  
+    </html>  
+    
