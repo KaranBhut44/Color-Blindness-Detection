@@ -1,5 +1,6 @@
 # SSD4 Color Blindness Detection
-## Repository link: https://github.com/nisargsheth/SSD4_Color_Blindness_Test
+## Repository link: https://github.com/KaranBhut44/SSD4_Color_Blindness_Test
+## Final Presentation link: https://github.com/KaranBhut44/SSD4_Color_Blindness_Test/blob/main/FInal_Presentation.pptx 
 ## index.html
  - This is the first page of the project consisting of basic form to take patient details. 
  - It also contains Instructions about how to use colorblindness testing framework(built in AFRAME).
